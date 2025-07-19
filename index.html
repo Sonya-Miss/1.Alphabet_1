@@ -40,6 +40,7 @@
         </div>
 
 
+        
          <!------------------------------------------- Перетягни в колонку -------------------------------------------------------->
 
     <!-- <h1 class="game-titleall text-4xl font-extrabold text-gray-800 mb-10 text-center">2. Перетягни Слова в Колонки</h1>
@@ -263,11 +264,32 @@
 
 
 
+
+ <!------------------------------------------- Впізнай слово (фразу) на слух ------------------------------------------------->
+
+  <section class="game-section">
+  <h1 class="game-titleall game3-title text-3xl md:text-4xl font-bold text-slate-800 mb-8 text-center">1: Впізнай букву на слух</h1>
+
+     <div id="word-bank" class="sticky top-0 z-50 w-full bg-blue-50  bg-opacity-95 backdrop-blur-sm p-6 md:p-8 rounded-b-2xl shadow-lg flex flex-wrap justify-center gap-4">
+    
+    </div>
+
+  <div class="flex flex-col gap-8 items-center mb-12">
+    <div id="audio-zones" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      
+    </div>
+
+  </div>
+</section>
+
+
+
+
 <!-------------------------------------------- Гра 1: Перетягніть слова до картинок -------------------------------------------------------->
 
       <section class="game-section">
       <h1 class="game-titleall text-3xl md:text-4xl font-bold text-slate-800 mb-8 text-center">
-        1: Перетягніть букву до картинок
+        2: Перетягніть букву до картинок
        </h1>
 
        <div id="draggable-words-container" class="sticky top-0 z-50 w-full bg-blue-50 bg-opacity-95 backdrop-blur-sm p-6 md:p-8 rounded-b-2xl shadow-lg flex flex-wrap justify-center gap-4">
@@ -281,12 +303,51 @@
 
 
 
+     
+    <h1 class="game-titleall text-4xl font-extrabold text-gray-800 mb-10 mt-10 text-center">
+        3. З'єднайте букви
+    </h1>
+    <div id="game-container-1" class="game-section bg-white p-6 rounded-lg shadow-xl w-full max-w-4xl mb-12">
+        <div class="game-area-wrapper">
+            <canvas id="line-canvas-1"></canvas>
+            <div id="english-column-1" class="flex flex-col gap-3"></div>
+            <div id="ukrainian-column-1" class="flex flex-col gap-3"></div>
+        </div>
+        <div class="flex justify-center mt-8">
+            <button id="final-check-button-1" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
+                Перевірити всі пари
+            </button>
+        </div>
+        <p id="message-area-1" class="text-center mt-4 text-lg font-medium"></p>
+    </div>
+
+
+
+
+ <!-------------------------------------- Гра 4: Перетягніть слова до картинок -------------------------------------------->
+
+      <section class="game-section">
+      <h1 class="game-titleall text-3xl md:text-4xl font-bold text-slate-800 mb-8 text-center mt-12">
+         4: Перетягніть слова до картинок
+       </h1>
+
+       <div id="draggable-words-container2" class="sticky top-0 z-50 w-full bg-blue-50 bg-opacity-95 backdrop-blur-sm p-6 md:p-8 rounded-b-2xl shadow-lg flex flex-wrap justify-center gap-4">
+       
+      </div>
+
+      <div id="puzzles-container-drag-and-drop2" class="flex flex-wrap gap-4 mb-12 px-2 md:px-0">
+      
+       </div>
+     </section>
+
+
+
              <!------------------------------------------- Перетягни в колонку -------------------------------------------------------->
 
     <section class="relative z-0 mb-20">
 
   <h1 class="game-titleall text-4xl font-extrabold text-gray-800 mb-5 text-center">
-    2. Перетягни Слова в Колонки
+    5. Перетягни Слова в Колонки
   </h1>
 
   <div class="sticky top-0 z-50 bg-white py-6 px-4 shadow-md rounded-lg mb-8">
@@ -318,21 +379,27 @@
 
 
 
- <!-------------------------------------- Гра 4: Перетягніть слова до картинок -------------------------------------------->
-<!-- 
-      <section class="game-section">
-      <h1 class="game-titleall text-3xl md:text-4xl font-bold text-slate-800 mb-8 text-center mt-12">
-         2: Перетягніть слова до картинок
-       </h1>
 
-       <div id="draggable-words-container2" class="sticky top-0 z-50 w-full bg-blue-50 bg-opacity-95 backdrop-blur-sm p-6 md:p-8 rounded-b-2xl shadow-lg flex flex-wrap justify-center gap-4">
-       
-      </div>
 
-      <div id="puzzles-container-drag-and-drop2" class="flex flex-wrap gap-4 mb-12 px-2 md:px-0">
-      
-       </div>
-     </section> -->
+
+    <h1 class="game-titleall text-4xl font-extrabold text-gray-800 mb-10 mt-10 text-center">
+        6. З'єднайте слова букви
+    </h1>
+    <div id="game-container-2" class="game-section bg-white p-6 rounded-lg shadow-xl w-full max-w-4xl">
+        <div class="game-area-wrapper">
+            <canvas id="line-canvas-2"></canvas>
+            <div id="english-column-2" class="flex flex-col gap-3"></div>
+            <div id="ukrainian-column-2" class="flex flex-col gap-3"></div>
+        </div>
+        <div class="flex justify-center mt-8">
+            <button id="final-check-button-2" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
+                Перевірити всі пари
+            </button>
+        </div>
+        <p id="message-area-2" class="text-center mt-4 text-lg font-medium"></p>
+    </div>
+
+
 
  <!-------------------------------------------- Гра 5: Складіть слова з літер ----------------------------------------------->
 
@@ -394,22 +461,6 @@
 
 
 
-    <h1 class="game-titleall text-4xl font-extrabold text-gray-800 mb-10 mt-10 text-center">
-        3. З'єднайте букви
-    </h1>
-    <div id="game-container-1" class="game-section bg-white p-6 rounded-lg shadow-xl w-full max-w-4xl mb-12">
-        <div class="game-area-wrapper">
-            <canvas id="line-canvas-1"></canvas>
-            <div id="english-column-1" class="flex flex-col gap-3"></div>
-            <div id="ukrainian-column-1" class="flex flex-col gap-3"></div>
-        </div>
-        <div class="flex justify-center mt-8">
-            <button id="final-check-button-1" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
-                Перевірити всі пари
-            </button>
-        </div>
-        <p id="message-area-1" class="text-center mt-4 text-lg font-medium"></p>
-    </div>
 
 
 
@@ -417,7 +468,7 @@
 
 <section class="relative z-0 mb-20">
   <h1 class="game-titleall text-4xl font-extrabold text-gray-800 mb-10 text-center">
-    4. Перетягни Слова в Колонки
+    7. Перетягни Слова в Колонки
   </h1>
 
   <div class="sticky top-0 z-50 bg-white py-6 px-4 shadow-md rounded-lg mb-8">
@@ -443,46 +494,6 @@
   <p id="column-game-message2" class="text-lg font-semibold text-center h-8"></p>
 </section>
 
-
-
-
-    <h1 class="game-titleall text-4xl font-extrabold text-gray-800 mb-10 mt-10 text-center">
-        5. З'єднайте слова букви
-    </h1>
-    <div id="game-container-2" class="game-section bg-white p-6 rounded-lg shadow-xl w-full max-w-4xl">
-        <div class="game-area-wrapper">
-            <canvas id="line-canvas-2"></canvas>
-            <div id="english-column-2" class="flex flex-col gap-3"></div>
-            <div id="ukrainian-column-2" class="flex flex-col gap-3"></div>
-        </div>
-        <div class="flex justify-center mt-8">
-            <button id="final-check-button-2" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
-                Перевірити всі пари
-            </button>
-        </div>
-        <p id="message-area-2" class="text-center mt-4 text-lg font-medium"></p>
-    </div>
-
-
-
-
-   
- <!------------------------------------------- Гра 6: Впізнай слово (фразу) на слух ------------------------------------------------->
-
-  <section class="game-section">
-  <h1 class="game-titleall game3-title text-3xl md:text-4xl font-bold text-slate-800 mb-8 text-center">6: Впізнай букву на слух</h1>
-
-     <div id="word-bank" class="sticky top-0 z-50 w-full bg-blue-50  bg-opacity-95 backdrop-blur-sm p-6 md:p-8 rounded-b-2xl shadow-lg flex flex-wrap justify-center gap-4">
-    
-    </div>
-
-  <div class="flex flex-col gap-8 items-center mb-12">
-    <div id="audio-zones" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      
-    </div>
-
-  </div>
-</section>
 
 
 
@@ -529,7 +540,7 @@
 
 
       <div class="cards_greetings flex flex-col items-center justify-center">
-      <h1 class="game-titleall text-3xl md:text-4xl font-bold text-slate-800 mb-8 text-center">7: Картки </h1>
+      <h1 class="game-titleall text-3xl md:text-4xl font-bold text-slate-800 mb-8 text-center">8: Картки </h1>
       <a href="https://quizlet.com/ua/1060784499/1alphabet-%D0%90%D0%BB%D1%84%D0%B0%D0%B2%D1%96%D1%82-%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B0-1-flash-cards/?new" class="greetings"  target="blank">Cards game</a>
     </div>
 
