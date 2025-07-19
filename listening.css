@@ -1,0 +1,33 @@
+.word-drop-slot-sentence-audio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+    text-align: center;
+    height: 64px; 
+    box-sizing: border-box;
+    padding: 0;
+    border: 2px dashed #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #6b7280;
+    min-width: 70px;
+  
+}
+.draggable-word-sentence-audio { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 0.25rem 0.5rem; 
+    font-size: 1.25rem; 
+    font-weight: 600; 
+    box-sizing: border-box;
+    line-height: 1; 
+}
+
+
+.word-drop-slot-sentence-audio {
+    width: 100px;
+}

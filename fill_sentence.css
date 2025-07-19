@@ -1,0 +1,170 @@
+
+h1 {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 800;   /* font-extrabold */
+    color: #1f2937;     /* text-gray-800 */
+    margin-bottom: 40px; /* mb-10 */
+    text-align: center;
+}
+
+/* Контейнер для всієї гри "Вставити слово в речення" */
+.sentence-drag-drop-container {
+    background-color: #ffffff; /* bg-white */
+    padding: 24px;              /* p-6 */
+    border-radius: 8px;         /* rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+    width: 100%;                /* w-full */
+    max-width: 48rem;           /* max-w-3xl (768px) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Банк слів для перетягування */
+.drag-words-bank-fill-in {
+    width: 100%;                  /* w-full */
+    background-color: #f9fafb;    /* bg-gray-50 */
+    padding: 16px;                /* p-4 */
+    border-radius: 6px;           /* rounded-md */
+    border: 1px solid #e5e7eb;    /* border border-gray-200 */
+    margin-bottom: 24px;          /* mb-6 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;                    /* gap-3 */
+}
+
+.drag-words-bank-fill-in h2 {
+    width: 100%;
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600;   /* font-semibold */
+    color: #374151;     /* text-gray-700 */
+    margin-bottom: 16px; /* mb-4 */
+    text-align: center;
+}
+
+/* Стилі для окремого слова, яке можна перетягувати */
+.draggable-fill-in-word {
+    background-color: #62b4e7; /* bg-orange-200 */
+    color: #0b3ba4;         /* text-orange-800 */
+    height: 45px;
+    padding-top: 8px;       /* py-2 */
+    padding-bottom: 8px;    /* py-2 */
+    padding-left: 16px;     /* px-4 */
+    padding-right: 16px;    /* px-4 */
+    border-radius: 6px;     /* rounded-md */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+    cursor: grab;
+    font-size: 1.325rem;    /* text-lg */
+    font-weight: 500;       /* font-medium */
+    transition: transform 0.2s ease-in-out; /* transition-transform duration-200 */
+}
+
+.draggable-fill-in-word:hover {
+    transform: scale(1.05); /* hover:scale-105 */
+}
+
+/* Стиль для слова, коли воно перетягується (тимчасова прозорість) */
+.draggable-fill-in-word.opacity-50 {
+    opacity: 0.5;
+}
+
+/* Контейнер для списку речень */
+.sentences-list-container {
+    width: 100%;                  /* w-full */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;                    /* gap-5 */
+    margin-bottom: 32px;          /* mb-8 */
+}
+
+/* Окрема обгортка для кожного речення */
+.sentence-item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Дозволяє словам переноситися на новий рядок */
+    gap: 8px; /* gap-2 */
+    font-size: 1.35rem;    /* text-xl */
+    font-weight: 500;      /* font-medium */
+    color: #1f2937;        /* text-gray-800 */
+    margin-bottom: 5px;
+}
+
+/* Зона скидання (пропуск у реченні) */
+.sentence-blank-drop-zone {
+    min-width: 50px;           /* min-w-[100px] */
+    height: 35px;               /* h-10 */
+    border: 2px dashed #9ca3af; /* border-2 border-dashed border-gray-400 */
+    border-radius: 6px;         /* rounded-md */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4b5563;             /* text-gray-600 */
+    font-size: 1.325rem;        /* text-lg */
+    font-weight: 600;           /* font-semibold */
+    padding-left: 8px;          /* px-2 */
+    padding-right: 8px;         /* px-2 */
+    transition: all 0.2s ease-in-out; /* Плавний перехід для ефектів */
+}
+/* ... (ваші існуючі стилі) ... */
+
+/* Стилі для зони скидання (пропуск у реченні) */
+.sentence-blank-drop-zone {
+    /* ... (існуючі властивості) ... */
+    display: flex; /* Важливо: переконайтеся, що це flexbox контейнер */
+    justify-content: center; /* Центруємо по горизонталі */
+    align-items: center;     /* Центруємо по вертикалі */
+    overflow: hidden; /* Обрізає вміст, якщо він виходить за межі */
+    text-align: center; /* Центрує текст placeholder "___" */
+}
+
+/* Стиль для перетягнутого слова, коли воно знаходиться всередині зони скидання */
+.sentence-blank-drop-zone .draggable-fill-in-word {
+    /* Прибираємо тут зайві padding, margin, shadow, cursor, transform */
+    /* які були застосовані для слова в банку, щоб воно виглядало як частина речення */
+    background-color: transparent; /* Робить фон прозорим */
+    color: inherit; /* Успадковує колір тексту від батьківського елемента */
+    padding: 0; /* Прибираємо внутрішні відступи */
+    box-shadow: none; /* Прибираємо тінь */
+    cursor: default; /* Курсор за замовчуванням */
+    transform: none; /* Прибираємо трансформації, якщо були */
+    font-weight: inherit; /* Успадковує жирність від батьківського тексту */
+    font-size: inherit; /* Успадковує розмір шрифту */
+    transition: none; /* Прибираємо переходи, щоб не було анімації при вставці */
+}
+
+/* Додамо ці стилі, щоб слово, яке знаходиться в зоні скидання,
+   могло мати специфічний вигляд, коли його стан перевіряється */
+.sentence-blank-drop-zone.correct-fill-in .draggable-fill-in-word {
+    color: #166534; /* text-green-800, якщо потрібно змінити колір саме слова */
+    font-weight: 700; /* font-bold */
+}
+
+.sentence-blank-drop-zone.incorrect-fill-in .draggable-fill-in-word {
+    color: #b91c1c; /* text-red-800, якщо потрібно змінити колір саме слова */
+    font-weight: 700; /* font-bold */
+}
+
+/* Додаткові стилі для тексту пропуску */
+/* Ці стилі були в попередніх версіях, просто переконайтеся, що вони є */
+.text-blue-600 {
+    color: #2563eb;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.text-green-600 {
+    color: #22c55e;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.draggable-fill-in-word.drag-disabled {
+    cursor: default;
+    opacity: 0.7;
+    color: #000000;
+}

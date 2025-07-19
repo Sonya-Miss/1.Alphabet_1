@@ -7,9 +7,10 @@ body {
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
+
 .letter-box {
     width: 50px;
-    height: 50px;
+    height: 60px;
     font-size: 1.5rem;
 }
 @media (min-width: 640px) {
@@ -93,12 +94,14 @@ body {
 
         /* Додаткові стилі для каруселі */
 .carousel-slide,
-.carousel-slide2 {
+.carousel-slide2,
+.carousel-slide3 {
   display: none;
 }
 
 .carousel-slide.active,
-.carousel-slide2.active {
+.carousel-slide2.active,
+ .carousel-slide3.active{
   display: block;
 }
 
@@ -129,6 +132,91 @@ body {
 
       #draggable-words-container, #word-bank, #draggable-words-container2 {
   margin-bottom: 2rem; /* або 32px */
+  
+}
+
+    /* --- СТИЛІ ДЛЯ ГРИ 2: Перетягування слів до картинок --- */
+/* Стилі для перетягуваних слів (в банку слів, клас: draggable-word) */
+.draggable-word,
+.draggable-word-slot5,
+.audio-draggable-word,
+.draggable-word-slot,
+.draggable-fill-in-word {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; /* Запобігає перенесенню тексту на новий рядок */
+    padding: 0.25rem 0.5rem; /* Зменшений padding для "впритик" */
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    box-sizing: border-box;
+    line-height: 1; /* Забезпечує відсутність додаткових проміжків */
+    /* Tailwind класи для кольорів та тіней вже є в JS, тому тут не дублюємо */
+}
+
+/* Стилі для зони скидання (класи: word-drop-zone та word-drop-zone2) */
+/* ВИПРАВЛЕНО: Ці класи не є вкладеними, вони існують окремо, тому їх слід вказати через кому */
+.word-drop-zone, /* Додано: для першої гри */
+.word-drop-zone2,
+.word-drop-slot5,
+.audio-drop-zone,
+.word-drop-zone-group,
+.sentence-blank-drop-zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Приховує вміст, якщо він виходить за межі */
+    text-align: center;
+    height: 60px; /* h-16 (16 * 4px = 64px) - збережено з вашого JS */
+    box-sizing: border-box;
+    padding: 0 px; /* Мінімальний внутрішній відступ для "впритик" */
+    /* margin-bottom: 15px; */
+
+    /* Додаткові стилі для рамки та фону, які можуть бути в Tailwind */
+    border: 2px dashed #d1d5db; /* border-gray-300 */
+    border-radius: 0.375rem; /* rounded-md */
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 700; /* font-bold */
+    color: #6b7280; /* text-gray-500 */
+
+    /* АДАПТАЦІЯ ШИРИНИ КОМІРКИ ДО ЗМІСТУ */
+    width: max-content; /* Комірка буде завширшки як її вміст */
+    min-width: 50px; /* Мінімальна ширина, щоб не зникала для дуже коротких слів */
+    max-width: 100%; /* Не дозволить виходити за межі батьківського контейнера */
+}
+
+/* Стилі для слова, КОЛИ воно знаходиться ВСЕРЕДИНІ комірки word-drop-zone АБО word-drop-zone2 */
+/* ВИПРАВЛЕНО: Селектор виправлено, щоб він правильно вказував на draggable-word всередині будь-якої із зон скидання */
+.word-drop-zone .draggable-word, /* Для першої гри */
+.word-drop-zone2 .draggable-word,
+.word-drop-slot5 .draggable-word-slot5,
+.audio-drop-zone .audio-draggable-word,
+.word-drop-zone-group .draggable-word-slot,
+.sentence-blank-drop-zone .draggable-fill-in-word{
+    width: 100%; /* Слово займає 100% ширини батьківської зони */
+    height: 100%; /* Слово займає 100% висоти батьківської зони */
+    padding: 0; /* Прибираємо весь внутрішній відступ слова всередині комірки */
+    margin: 0; /* Прибираємо зовнішні відступи */
+    white-space: nowrap; /* Спочатку пробуємо без переносу */
+    overflow: hidden; /* Приховуємо, якщо не поміщається */
+    text-overflow: ellipsis; /* Додаємо три крапки, якщо текст обрізається */
+    font-size: 1.25rem; /* Початковий розмір шрифту */
+    line-height: 1;
+}
+
+/* Стилі для плейсхолдера у комірках Гри 5 */
+.word-drop-slot5 .placeholder {
+    font-size: 0.875rem; /* text-sm */
+    color: #9ca3af; /* text-gray-400 */
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    white-space: nowrap; /* Щоб плейсхолдер не переносився */
+}
+
+/* Приховати плейсхолдер, коли слово скинуто в комірку Гри 5 */
+.word-drop-slot5:has(.draggable-word-slot5) .placeholder {
+    opacity: 0;
+    pointer-events: none;
 }
 
 #word-bank {
@@ -137,11 +225,20 @@ body {
 
    .game-section {
   position: relative;
-  margin-bottom: 120px; /* простір між іграми */
+  margin-bottom: 120px;
 }
 
 .game-title {
   position: sticky;
+  top: 0;
+  background: white;
+  z-index: 30;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+.game-titleall {
   top: 0;
   background: white;
   z-index: 30;
@@ -161,4 +258,21 @@ body {
   text-decoration: underline;
   text-underline-offset: 0.3em;
   color: grey;
+}
+
+
+.imagesize {
+    max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+.cancel-button {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  margin-left: 6px;
+  cursor: pointer;
 }

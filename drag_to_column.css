@@ -1,0 +1,51 @@
+        .column-drag-drop-zone { /* Змінено назву класу */
+            min-height: 140px;
+            max-width: 290px;
+            border: 2px dashed #cbd5e1; /* border-gray-300 */
+            background-color: #f8fafc; /* bg-gray-50 */
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .column-drag-drop-zone.drag-over { /* Змінено назву класу */
+            background-color: #e0f2fe; /* bg-blue-100 */
+            border-color: #3b82f6; /* border-blue-500 */
+        }
+
+        .column-draggable-item { /* Змінено назву класу */
+            cursor: grab;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .column-draggable-item:active { /* Змінено назву класу */
+            cursor: grabbing;
+        }
+
+        .column-draggable-item.opacity-50 { /* Змінено назву класу */
+            opacity: 0.5;
+        }
+
+        .column-correct-drop { /* Змінено назву класу */
+            border-color: #10b981; /* green-500 */
+            background-color: #d1fae5; /* green-100 */
+        }
+
+        .column-incorrect-drop { /* Змінено назву класу */
+            border-color: #ef4444; /* red-500 */
+            background-color: #fee2e2; /* red-100 */
+        }
+
+       .column-check-game-button {
+            position: relative; /* Абсолютне позиціонування */
+            left: 50%; /* Починаємо з середини батьківського елемента */
+            transform: translateX(-50%); /* Зсуваємо кнопку на половину її ширини вліво для точного центрування */
+            bottom: 10px; /* Відступ від нижнього краю body */
+            /* Інші стилі кнопки вже є в JS */
+            z-index: 10; /* Щоб кнопка була поверх інших елементів */
+            margin-top: 20px;
+        }
+
+
