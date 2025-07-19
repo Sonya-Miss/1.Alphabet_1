@@ -18,15 +18,15 @@ const dragAndDropPuzzlesData = [
 
 
 const dragAndDropPuzzlesData2 = [
-    { correctWord: "Ff", image: "./Pictures/Ff.jpg", draggableWord: "Frog" },
-    { correctWord: "Gg", image: "./Pictures/Gg.jpg", draggableWord: "Goat" },
-    { correctWord: "Bb", image: "./Pictures/Bb.jpg", draggableWord: "Ball" },
-    { correctWord: "Ii", image: "./Pictures/Ii.jpg", draggableWord: "Ice" },
-    { correctWord: "Hh", image: "./Pictures/Hh.jpg", draggableWord: "Horse" },
-    { correctWord: "Aa", image: "./Pictures/Aa.jpg", draggableWord: "Apple" },
-    { correctWord: "Cc", image: "./Pictures/Cc.jpg", draggableWord: "Cat" },
-    { correctWord: "Dd", image: "./Pictures/Dd.jpg", draggableWord: "Dog" },
-    { correctWord: "Ee", image: "./Pictures/Ee.jpg", draggableWord: "Egg" },
+    { correctWord: "Frog", image: "./Pictures/Ff.jpg", draggableWord: "Frog" },
+    { correctWord: "Goat", image: "./Pictures/Gg.jpg", draggableWord: "Goat" },
+    { correctWord: "Ball", image: "./Pictures/Bb.jpg", draggableWord: "Ball" },
+    { correctWord: "Ice", image: "./Pictures/Ii.jpg", draggableWord: "Ice" },
+    { correctWord: "Horse", image: "./Pictures/Hh.jpg", draggableWord: "Horse" },
+    { correctWord: "Apple", image: "./Pictures/Aa.jpg", draggableWord: "Apple" },
+    { correctWord: "Cat", image: "./Pictures/Cc.jpg", draggableWord: "Cat" },
+    { correctWord: "Dog", image: "./Pictures/Dd.jpg", draggableWord: "Dog" },
+    { correctWord: "Egg", image: "./Pictures/Ee.jpg", draggableWord: "Egg" },
 ];
 
 
